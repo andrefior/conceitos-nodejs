@@ -60,14 +60,14 @@ app.put("/repositories/:id", (request, response) => {
   const { id } = request.params;
   const { title, url, techs } = request.body;
   const repositoryIndex = repositories.findIndex(repository => repository.id === id);
-  const repositoryLikes = repositories[repositoryIndex].likes;
+//  const repositoryLikes = repositories[repositoryIndex].likes;
 
   const repository = {
     id,
     title,
     url,
     techs,
-    likes: repositoryLikes
+    likes: repositories[repositoryIndex].likes
   }
   
   repositories[repositoryIndex] = repository;
